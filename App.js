@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { Button, FlatList, StyleSheet, TextInput, View } from 'react-native';
-import { FcAddRow } from 'react-icons/fc'
-import ListItems from './Components/ListItems/ListItems';
+import { StyleSheet, View } from 'react-native';
 import InputPlace from './Components/InputPlace/InputPlace';
 import PlaceList from './Components/PlaceList/PlaceList';
 import PlaceDetail from './Components/PlaceDetail/PlaceDetail';

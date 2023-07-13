@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FcAddRow } from "react-icons/fc";
 import { Button, StyleSheet, TextInput, View } from "react-native";
 
+
 const InputPlace = (props) => {
     const [inputValue, setInputValue] = useState('');
 
@@ -24,7 +25,14 @@ const InputPlace = (props) => {
                     icon={<FcAddRow size={20} style={{ color: 'wheat' }} />}
                     onPress={() => {
                         if (inputValue !== '') {
-                            props.setPlaceList([...props.placeList, { key: Math.random().toString(), value: inputValue }]);
+                            props.setPlaceList([...props.placeList,
+                            {
+                                key: Math.random().toString(),
+                                value: inputValue,
+                                image: {
+                                    uri: 'https://i.ibb.co/MGT2S8p/abc.jpg'
+                                }
+                            }]);
                             setInputValue('');
                         } else {
                             alert('Enter in an input')
