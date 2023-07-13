@@ -6,7 +6,7 @@ const PlaceDetail = (props) => {
     return (
         <Modal>
             <View>
-                <Image source={props.place.image} style={{ width: '100%', height: 200 }} />
+                <Image source={props.place.image} style={{ width: '100%', height: 300 }} />
                 <Text>{props.place.value}</Text>
                 <View>
                     <Button title='Delete' color='red' />

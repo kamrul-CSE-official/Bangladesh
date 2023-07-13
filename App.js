@@ -4,6 +4,11 @@ import InputPlace from './Components/InputPlace/InputPlace';
 import PlaceList from './Components/PlaceList/PlaceList';
 import PlaceDetail from './Components/PlaceDetail/PlaceDetail';
 
+
+//9. Completing Modal by Adding Image and Other Details
+
+
+
 export default function App() {
   const [placeList, setPlaceList] = useState([]);
   const [selectedPlace, setSelectedPlace] = useState(null)
