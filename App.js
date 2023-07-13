@@ -1,20 +1,12 @@
 import React, { useState } from 'react';
-import { Button, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, FlatList, StyleSheet, TextInput, View } from 'react-native';
 import { FcAddRow } from 'react-icons/fc'
 import ListItems from './Components/ListItems/ListItems';
+import InputPlace from './Components/InputPlace/InputPlace';
+import PlaceList from './Components/PlaceList/PlaceList';
 
 export default function App() {
-  const [inputValue, setInputValue] = useState('');
   const [placeList, setPlaceList] = useState([]);
-
-  const list = placeList.map((item, i) => {
-    return (
-      <ListItems key={i} placeName={item} onItemPressed={() => alert(item)} />
-    )
-  }
-
-  );
-
 
   //6. Dynamic List
 
@@ -22,34 +14,12 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.inputView}>
-        <TextInput
-          style={{
-            width: '80%',
-            borderBottomWidth: 1,
-            borderColor: 'green',
-            padding: 1
-          }}
-          placeholder='Add a place'
-          value={inputValue}
-          onChangeText={text => setInputValue(text)}
-        />
-        <Button
-          title="Add"
-          icon={<FcAddRow size={20} style={{ color: 'wheat' }} />}
-          onPress={() => {
-            if (inputValue !== '') {
-              setPlaceList([...placeList, inputValue]);
-              setInputValue('');
-            } else {
-              alert('Enter in an input')
-            }
-          }}
-        />
-      </View>
-      <ScrollView style={{ width: '100%' }}>
-        {list}
-      </ScrollView>
+
+      <InputPlace placeList={placeList} setPlaceList={setPlaceList} />
+
+      <PlaceList placeList={placeList} />
+
+
     </View>
   );
 }
@@ -62,12 +32,4 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     flexDirection: 'column'
   },
-  inputView: {
-    padding: 20,
-    width: '100%',
-    marginTop: 50,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  }
 });
