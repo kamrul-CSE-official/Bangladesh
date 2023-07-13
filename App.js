@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { FcAddRow } from 'react-icons/fc'
 import ListItems from './Components/ListItems/ListItems';
 
 export default function App() {
@@ -34,7 +35,8 @@ export default function App() {
           onChangeText={text => setInputValue(text)}
         />
         <Button
-          title='Add'
+          title="Add"
+          icon={<FcAddRow size={20} style={{ color: 'wheat' }} />}
           onPress={() => {
             if (inputValue !== '') {
               setPlaceList([...placeList, inputValue]);
