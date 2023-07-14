@@ -6,7 +6,7 @@ const PlaceList = (props) => {
     return (
         <View style={{ width: '100%' }}>
             <FlatList data={props.placeList} renderItem={(info) => {
-                return (<ListItems placeName={info.item.value} onItemPressed={() => props.handleSelectedPlace(info.item.key)} />)
+                return (<ListItems placeName={info.item.value} image={info.item.image} onItemPressed={() => props.handleSelectedPlace(info.item.key)} />)
             }} />
         </View>
     );

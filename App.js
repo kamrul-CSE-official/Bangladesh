@@ -25,9 +25,18 @@ export default function App() {
     setSelectedPlace(n)
   }
 
+  const hendleDeleteItem = key => {
+    setPlaceList(
+      placeList.filter(place =>
+        place.key !== key
+      )
+    )
+    setSelectedPlace(null)
+  }
+
   let placeDetail = null;
   if (selectedPlace !== null) {
-    placeDetail = <PlaceDetail place={selectedPlace} hendleHideModal={hendleHideModal} />
+    placeDetail = <PlaceDetail place={selectedPlace} hendleHideModal={hendleHideModal} hendleDeleteItem={hendleDeleteItem} />
   }
 
 
