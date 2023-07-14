@@ -21,9 +21,13 @@ export default function App() {
     setSelectedPlace(place)
   }
 
+  const hendleHideModal = (n) => {
+    setSelectedPlace(n)
+  }
+
   let placeDetail = null;
   if (selectedPlace !== null) {
-    placeDetail = <PlaceDetail place={selectedPlace} />
+    placeDetail = <PlaceDetail place={selectedPlace} hendleHideModal={hendleHideModal} />
   }
 
 

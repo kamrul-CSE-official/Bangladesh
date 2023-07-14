@@ -10,7 +10,7 @@ const PlaceDetail = (props) => {
                 <Text>{props.place.value}</Text>
                 <View>
                     <Button title='Delete' color='red' />
-                    <Button title='Close' onPress={() => { props.hendleHideModal() }} />
+                    <Button title='Close' onPress={() => { props.hendleHideModal(null) }} />
                 </View>
             </View>
         </Modal>

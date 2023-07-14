@@ -11,7 +11,7 @@ const InputPlace = (props) => {
             <View style={styles.inputView}>
                 <TextInput
                     style={{
-                        width: '80%',
+                        width: '90%',
                         borderBottomWidth: 1,
                         borderColor: 'green',
                         padding: 1
